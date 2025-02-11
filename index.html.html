@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Sound Player</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            width: 300px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <img src="image-removebg-preview (6).png" alt="Click Me" onclick="playSound()">
+    
+    <audio id="audio" src="Wham! Last Christmas (Egyptian Edition) (1).mp3"></audio>
+
+    <script>
+        function playSound() {
+            let audio = document.getElementById("audio");
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    </script>
+
+</body>
+</html>
